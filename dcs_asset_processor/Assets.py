@@ -1,13 +1,13 @@
-from rs_util_shared import STAGING_DIR
-from rs_util_shared import COMPRESSED_DIR
-from rs_util_shared import CHECKSUMS_DIR
-from rs_util_shared import LOGGER
-from rs_util_shared import single_dir_size
+from dcs_asset_processor.util_shared import STAGING_DIR
+from dcs_asset_processor.util_shared import COMPRESSED_DIR
+from dcs_asset_processor.util_shared import CHECKSUMS_DIR
+from dcs_asset_processor.util_shared import LOGGER
+from dcs_asset_processor.util_shared import single_dir_size
 
-from rs_util_google import download_gdrive_folder
-from rs_util_google import THREADPOOL
+from dcs_asset_processor.util_google import download_gdrive_folder
+from dcs_asset_processor.util_google import THREADPOOL
 
-from rs_util_archive import compress_and_checksum
+from dcs_asset_processor.util_archive import compress_and_checksum
 
 from typing import Dict, Any, List
 from os.path import join as os_join

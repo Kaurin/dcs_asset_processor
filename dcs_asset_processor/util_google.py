@@ -3,9 +3,9 @@ This is where we keep all our google related functions
 """
 
 # Our includes
-from rs_util_shared import MINIMAL_SAMPLE_SIZE
-from rs_util_shared import SCRIPT_DIR
-from rs_util_shared import LOGGER
+from dcs_asset_processor.util_shared import MINIMAL_SAMPLE_SIZE
+from dcs_asset_processor.util_shared import WORK_DIR
+from dcs_asset_processor.util_shared import LOGGER
 
 from threading import local as threading_local
 from io import BytesIO as io_BytesIO
@@ -23,7 +23,7 @@ from concurrent.futures import ThreadPoolExecutor
 if "GOOGLE_APPLICATION_CREDENTIALS" not in environ:
     environ["GOOGLE_APPLICATION_CREDENTIALS"] = "credentials.json"
 environ["GOOGLE_APPLICATION_CREDENTIALS"] = os_join(
-    SCRIPT_DIR, environ["GOOGLE_APPLICATION_CREDENTIALS"]
+    WORK_DIR, environ["GOOGLE_APPLICATION_CREDENTIALS"]
 )
 
 
@@ -33,12 +33,10 @@ THREADPOOL = ThreadPoolExecutor(max_workers=16)
 THREADPOOL_FAKE_DL = ThreadPoolExecutor(max_workers=64)
 
 
-class BaseNameError(Exception):
-    ...
+class BaseNameError(Exception): ...
 
 
-class SubStringError(Exception):
-    ...
+class SubStringError(Exception): ...
 
 
 def get_service():

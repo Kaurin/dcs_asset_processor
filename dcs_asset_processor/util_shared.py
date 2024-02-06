@@ -1,13 +1,11 @@
-from os.path import dirname as os_dirname
 from os.path import join as os_join
 from os.path import getsize as os_getsize
 from os.path import islink as os_islink
+from pathlib import Path as pl_path
 
 from os import sep as os_sep
 from os import environ
 from os import walk as os_walk
-
-from inspect import getsourcefile
 
 import logging
 
@@ -20,10 +18,10 @@ logger_console_handler.setFormatter(logger_formatter)
 LOGGER.addHandler(logger_console_handler)
 
 
-SCRIPT_DIR = os_dirname(getsourcefile(lambda: 0))  # type: ignore
-STAGING_DIR = os_join(SCRIPT_DIR, "Staging")
+WORK_DIR = pl_path.cwd()
+STAGING_DIR = os_join(WORK_DIR, "Staging")
 CHECKSUMS_DIR = os_join(STAGING_DIR, "Checksums")
-COMPRESSED_DIR = os_join(SCRIPT_DIR, "Compressed")
+COMPRESSED_DIR = os_join(WORK_DIR, "Compressed")
 
 
 GITHUB_REF_NAME = "no_GITHUB_REF_NAME"

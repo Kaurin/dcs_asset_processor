@@ -9,9 +9,9 @@ so we can utilize maximum resources of any given system this runs on.
 """
 
 # Our includes
-from rs_util_shared import MINIMAL_SAMPLE_SIZE
-from rs_util_shared import DELETE_AFTER_COMPRESS
-from rs_util_shared import LOGGER
+from dcs_asset_processor.util_shared import MINIMAL_SAMPLE_SIZE
+from dcs_asset_processor.util_shared import DELETE_AFTER_COMPRESS
+from dcs_asset_processor.util_shared import LOGGER
 
 # subprocess to run 7z outside of python
 from subprocess import run as sp_run

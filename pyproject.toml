@@ -58,11 +58,11 @@ targets = "src"
 line-length = 120
 fast = true
 
-# [tool.coverage.run]
-# branch = true
+[tool.coverage.run]
+branch = true
 
-# [tool.coverage.report]
-# fail_under = 100
+[tool.coverage.report]
+fail_under = 0 # Disabled coverage
 
 [tool.flake8]
 max-line-length = 120

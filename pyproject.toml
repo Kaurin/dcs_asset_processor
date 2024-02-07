@@ -46,7 +46,7 @@ test = [
 Source = "https://github.com/Kaurin/dcs_asset_processor"
 
 [tool.flit.module]
-name = "python_package"
+name = "dcs_asset_processor"
 
 [tool.bandit]
 exclude_dirs = ["build", "dist", "tests", "scripts"]
